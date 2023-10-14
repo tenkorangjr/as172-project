@@ -5,6 +5,7 @@ Class: AS172
 
 import random
 from star import Star, HighMassStar, LowMassStar
+from turtle import RawTurtle
 from screen import StarWindow
 from tkinter import messagebox
 
@@ -18,9 +19,10 @@ def main():
     selected_type = window.textinput("Type of Star", "What type of star do you want to see (high/low): ")
 
     if selected_type == "high":
-        star = HighMassStar()
+        star = HighMassStar(window)
+        window.update()
     elif selected_type == "low":
-        star = LowMassStar()
+        star = LowMassStar(window)
     else:
         messagebox.showerror("Ooops", "Invalid input entered")
         
