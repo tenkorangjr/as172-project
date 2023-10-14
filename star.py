@@ -77,7 +77,7 @@ class HighMassStar(Star):
         width = self.window.window_width
 
         for _ in range(140):
-            self.goto(random.randint(-(width/2), width/2), random.randint(-(height/2), height/2))
+            self.goto(random.randint(-(width), width), random.randint(-(height), height))
             self.dot(5, random.choice(["white", "red", "yellow", "blue", "gray"]))
 
 
