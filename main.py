@@ -4,8 +4,9 @@ Class: AS172
 """
 
 import random
-from star import Star
+from star import Star, HighMassStar, LowMassStar
 from screen import StarWindow
+from tkinter import messagebox
 
 def main():
     """
@@ -14,14 +15,17 @@ def main():
     """
 
     window = StarWindow()
+    selected_type = window.textinput("Type of Star", "What type of star do you want to see (high/low): ")
+
+    if selected_type == "high":
+        star = HighMassStar()
+    elif selected_type == "low":
+        star = LowMassStar()
+    else:
+        messagebox.showerror("Ooops", "Invalid input entered")
+        
 
     window.mainloop()
-
-
-    # stars = [Star()] # Creating a list of random stars on the screen with varying colors
-    # for _ in range(30):
-    #     pass
-
 
 if __name__ == "__main__":
     main()

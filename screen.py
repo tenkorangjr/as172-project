@@ -2,10 +2,9 @@
 Author: Michael Tenkorang
 Class: AS172
 """
-from tkinter import Canvas
-import turtle
+from turtle import _Screen
 
-class StarWindow(turtle._Screen):
+class StarWindow(_Screen):
 
     def __init__(self) -> None:
         super().__init__()
