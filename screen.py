@@ -12,3 +12,4 @@ class StarWindow(_Screen):
         self.bgcolor("black")
         self.window_height = 500
         self.window_width = 500
+        self.colormode(255)
