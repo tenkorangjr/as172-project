@@ -3,7 +3,7 @@ Author: Michael Tenkorang Ofori
 Class: AS172
 """
 
-import random
+import time
 from star import Star, HighMassStar, LowMassStar
 from turtle import RawTurtle
 from screen import StarWindow
@@ -26,6 +26,18 @@ def main():
     else:
         messagebox.showerror("Ooops", "Invalid input entered")
         
+    shrinking = False
+
+    while not star.has_cycle_ended():
+        if not star.still_growing() and not shrinking:
+            star.factor = 0.6
+            shrinking = True
+
+        time.sleep(0.02)
+        star.draw()
+        if shrinking and star.radius < 20:
+            star.end_cycle()
+        window.update()
 
     window.mainloop()
 
