@@ -5,7 +5,6 @@ Class: AS172
 
 import time
 from star import Star, HighMassStar, LowMassStar
-from turtle import RawTurtle
 from screen import StarWindow
 from tkinter import messagebox
 
@@ -16,6 +15,8 @@ def main():
     """
 
     window = StarWindow()
+
+    messagebox.showinfo(title="Star Explosion Warning 💀", message="You're lightyears away from Earth! Beware of Supernovas and blackholes!!!💀")
     selected_type = window.textinput("Type of Star", "What type of star do you want to see (high/low): ")
 
     if selected_type == "high":
