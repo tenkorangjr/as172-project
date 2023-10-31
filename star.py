@@ -84,7 +84,7 @@ class HighMassStar(Star):
 class LowMassStar(Star):
 
     def __init__(self, window: _Screen) -> None:
-        super().__init__(window, 20, 45)
+        super().__init__(window, 20, 55)
         self.factor = 1.01
 
     def end_cycle(self):
