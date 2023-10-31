@@ -10,10 +10,10 @@ import random
 
 class Star(RawTurtle):
 
-    def __init__(self, screen: _Screen, radius: float) -> None:
+    def __init__(self, screen: _Screen, radius: float, starting_index: int = 0) -> None:
         super().__init__(screen)
         self.penup()
-        self.__color_index = 0
+        self.__color_index: int = starting_index
         self.stage_colors: List[Tuple[int]] = None
         self.load_colors()
         self.stage_color: Tuple[int] = None
@@ -84,7 +84,8 @@ class HighMassStar(Star):
 class LowMassStar(Star):
 
     def __init__(self, window: _Screen) -> None:
-        super().__init__(window, 20)
+        super().__init__(window, 20, 45)
+        self.factor = 1.01
 
     def end_cycle(self):
         self.radius = 10

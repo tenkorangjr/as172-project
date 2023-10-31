@@ -34,7 +34,10 @@ def main():
             star.factor = 0.6
             shrinking = True
 
-        time.sleep(0.02)
+        if selected_type == "high":
+            time.sleep(0.02)
+        else:
+            time.sleep(0.14)
         star.draw()
         if shrinking and star.radius < 20:
             star.end_cycle()
